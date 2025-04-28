@@ -22,6 +22,7 @@ const HourlyTemparature = ({ data }: HourlyTemparatureProps) => {
       </CardHeader>
       <CardContent>
         <div className="h-[200px] w-ful">
+          <p className="text-sm text-muted-foreground">[Developer working on this feature]</p>
         </div>
       </CardContent>
     </Card>
