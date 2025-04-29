@@ -1,4 +1,4 @@
-import { Compass, Gauge, Sunrise, Sunset } from "lucide-react";
+import { Blinds, Compass, Gauge, Sunrise, Sunset, Waves } from "lucide-react";
 import type { WeatherData } from "../api/types";
 import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
@@ -32,7 +32,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
       title: "Sunset",
       value: formatTime(sys.sunset),
       icon: Sunset,
-      color: "text-blue-500",
+      color: "text-orange-700",
     },
     {
       title: "Wind Direction",
@@ -45,6 +45,18 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
       value: `${main.pressure} hPa`,
       icon: Gauge,
       color: "text-purple-500 ",
+    },
+    {
+      title: "Sea Level",
+      value: `${main.sea_level}`,
+      icon: Waves,
+      color: "text-blue-500 ",
+    },
+    {
+      title: "Ground Level",
+      value: `${main.grnd_level}`,
+      icon: Blinds,
+      color: "text-amber-700",
     },
   ];
 
@@ -60,7 +72,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
               <div key={ele.title} className="flex items-center gap-3 rounded-lg border p-4">
                 <ele.icon className={`h-5 w-5 ${ele.color}`} />
                 <div>
-                  <p className="text-sm font-medium leading-none">{ele.title}</p>
+                  <p className="text-xs font-medium leading-none ">{ele.title}</p>
                   <p className="text-sm font-medium text-muted-foreground">{ele.value}</p>
                 </div>
               </div>

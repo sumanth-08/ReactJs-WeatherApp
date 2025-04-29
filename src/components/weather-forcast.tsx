@@ -9,6 +9,7 @@ interface WeatherForecastProps {
 
 interface DailyForecast {
   date: number;
+  temp: number;
   temp_min: number;
   temp_max: number;
   humidity: number;
@@ -27,6 +28,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
 
     if (!prev[date]) {
       prev[date] = {
+        temp: cur.main.temp,
         temp_min: cur.main.temp_min,
         temp_max: cur.main.temp_max,
         humidity: cur.main.humidity,
@@ -42,7 +44,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
     return prev;
   }, {} as Record<string, DailyForecast>);
 
-  const nextDays = Object.values(dailyForecasts).slice(0, 3);
+  const nextDays = Object.values(dailyForecasts).slice(1, 4);
 
   function formatTemp(temp: number): string {
     return `${Math.ceil(temp)}°`;
@@ -59,10 +61,11 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
             return (
               <div key={day.date} className="grid grid-cols md:grid-cols-3 lg:grid-cols-3 items-center gap-4 rounded-lg border p-4">
                 <div>
-                  <p className="text-sm font-medium">{format(new Date(day.date * 1000), "EEE MM d")}</p>
+                  <p className="text-xs font-medium">{format(new Date(day.date * 1000), "EEE, MMM d")}</p>
                   <div className="flex items-center">
+                    <p className="text-sm font-medium text-muted-foreground capitalize">{formatTemp(day.temp)}</p>
                     <img src={`https://openweathermap.org/img/wn/${day.weather.icon}@4x.png`} alt="current-weather" className="w-8 h-8 object-contain" />
-                    <p className="text-sm font-medium text-muted-foreground capitalize">{day.weather.description}</p>
+                    <p className="text-sm font-medium text-muted-foreground capitalize">{day.weather.main}</p>
                   </div>
                 </div>
                 <div className="flex justify-start gap-4">

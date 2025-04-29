@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/theme-provider";
 import { Moon, Sun } from "lucide-react";
+import CitySearch from "./city-seach";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -8,11 +9,13 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-50 w-full border-b bg-background/50 backdrop-blur py-2 supports-[backdrop-filter]:bg-background-50">
-      <div className="container mx-auto flex h-16 items-center justify-between px-8">
+      <div className="container mx-auto flex h-16 items-center justify-between px-10">
         <Link to="/">
           <img src="./vite.svg" alt="logo" />
         </Link>
-        <div>
+        <div className="flex gap-2 md:gap-4">
+          {/* search */}
+          <CitySearch />
           <div
             onClick={() => setTheme(dark ? "light" : "dark")}
             className={`flex items-center cursor-pointer transition-transform duration-500

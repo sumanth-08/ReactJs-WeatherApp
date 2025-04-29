@@ -34,7 +34,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                 <p className="text-6xl font-bold tracking-tighter">{formatTemp(temp)}</p>
 
                 <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Feels like: {formatTemp(feels_like)}</p>
+                  <p className="text-xs font-medium text-muted-foreground">Feels like: {formatTemp(feels_like)}</p>
                   <div className="flex gap-2 text-sm font-medium">
                     <span className="flex items-center gap-1 text-blue-500">
                       <ArrowDown className="w-3 h-3" />
@@ -50,14 +50,14 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
               </div>
               <div className="grid grid-cols-2 gap-1">
                 <div className="flex flex-col  gap-2">
-                  <p className="text-sm text-muted-foreground">Humidity</p>
+                  <p className="text-xs text-muted-foreground">Humidity</p>
                   <div className="flex items-center gap-2">
                     <Droplets className="h-3 w-3  text-blue-500" />
                     <p className="text-sm font-medium">{humidity}%</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <p className="text-sm text-muted-foreground">Wind Speed</p>
+                  <p className="text-xs text-muted-foreground">Wind Speed</p>
                   <div className="flex items-center gap-2">
                     <Wind className="h-3 w-3  text-blue-500" />
                     <p className="text-sm font-medium">{speed}m/s</p>

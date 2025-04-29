@@ -13,7 +13,6 @@ const WeatherDashboard = () => {
   const { coordinates, error: loacationError, isLoading: locationLoading, getLocation } = useGeoLocation();
 
   const locationQuery = useReverseGeoCodeQuery(coordinates);
-  console.log(locationQuery);
 
   const weatherQuery = useWeatherQuery(coordinates);
   const forecastQuery = useForecastQuery(coordinates);
@@ -101,12 +100,11 @@ const WeatherDashboard = () => {
           {/* hourly temparature */}
           <HourlyTemparature data={forecastQuery.data} />
         </div>
-        <div className="grid md:grid-cols-2 gap-6 items-start">
-          {/* forecast */}
-          <WeatherForecast data={forecastQuery.data} />
-
+        <div className="grid md:grid-cols-2 gap-4 items-start">
           {/* details */}
           <WeatherDetails data={weatherQuery.data} />
+          {/* forecast */}
+          <WeatherForecast data={forecastQuery.data} />
         </div>
       </div>
     </div>

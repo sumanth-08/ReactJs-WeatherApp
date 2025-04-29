@@ -11,11 +11,10 @@ class WeatherAPI {
   }
 
   private async fetchData<T>(url: string): Promise<T> {
-    console.log(url)
     const res = await fetch(url);
 
     if (!res.ok) {
-    //   console.log(res.statusText);
+      //   console.log(res.statusText);
       throw new Error(`Weather api error: ${res.statusText}`);
     }
     return res.json();
@@ -46,6 +45,15 @@ class WeatherAPI {
       lat: lat.toString(),
       lon: lon.toString(),
       limit: 1,
+    });
+
+    return this.fetchData<GeocodingResponse[]>(url);
+  }
+
+  public async searchLocation(query: string): Promise<GeocodingResponse[]> {
+    const url = this.createUrl(`${API_CONFIG.GEO}/direct`, {
+      q: query,
+      limit: "5",
     });
 
     return this.fetchData<GeocodingResponse[]>(url);
