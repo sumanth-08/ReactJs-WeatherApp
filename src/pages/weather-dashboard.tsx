@@ -8,6 +8,7 @@ import CurrentWeather from "../components/current-weather";
 import HourlyTemparature from "../components/hourly-temperature";
 import WeatherDetails from "../components/weather-details";
 import WeatherForecast from "../components/weather-forcast";
+import FavoriteCities from "../components/favorite-cities";
 
 const WeatherDashboard = () => {
   const { coordinates, error: loacationError, isLoading: locationLoading, getLocation } = useGeoLocation();
@@ -86,6 +87,8 @@ const WeatherDashboard = () => {
 
   return (
     <div className="space-y-4">
+      {/* Favorite cities */}
+      <FavoriteCities />
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold">My Location</h1>
         <Button variant={"outline"} size={"icon"} onClick={handlerefresh} disabled={weatherQuery.isFetching || forecastQuery.isFetching}>
