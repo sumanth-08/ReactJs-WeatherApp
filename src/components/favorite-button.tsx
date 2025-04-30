@@ -29,7 +29,7 @@ const FvaoriteButton = ({ data }: FavoriteInterface) => {
   };
 
   return (
-    <Button variant={isCurrentFavoritte ? "default" : "outline"} size={"icon"} className={isCurrentFavoritte ? "bg-amber-400 hover:bg-amber-500" : ""} onClick={handleToggleFav}>
+    <Button variant={isCurrentFavoritte ? "default" : "outline"} size="sm" className={isCurrentFavoritte ? "bg-amber-400 hover:bg-amber-500" : ""} onClick={handleToggleFav}>
       <Star className={`h-4 w-4 ${isCurrentFavoritte ? "fill-current" : ""}`} />
     </Button>
   );
