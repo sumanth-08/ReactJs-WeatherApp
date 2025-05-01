@@ -37,4 +37,4 @@ git clone https://github.com/<your-username>/ReactJs-WeatherApp.git
 ### Issues
 Create any issues [here](https://github.com/sumanth-08/ReactJs-WeatherApp/issues)
 
-Speacial Thanks to [RoadsideCoder](https://www.youtube.com/@RoadsideCoder)
+Special Thanks to [RoadsideCoder](https://www.youtube.com/@RoadsideCoder)
