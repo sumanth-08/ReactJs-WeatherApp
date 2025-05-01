@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# ReactJs - Tanstack - Weather app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Weather App in ReactJS with Tailwind CSS, Tanstack Query, Typescript, Shadcn UI, Recharts and Openweather API and.
 
-Currently, two official plugins are available:
+## Local Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requirements
 
-## Expanding the ESLint configuration
+To run locally, you will need
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js(v18 or above)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Developer QuickStart
+
+1. Fork this repo to your Github account
+
+After forking the repository, clone it to your local device by using the following command:
+
+```
+git clone https://github.com/<your-username>/ReactJs-WeatherApp.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Run `npm i` in the root directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Set up your `.env` file using the recommendations in the `.env.example` file.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+4. Set the following environment variables:
+
+- VITE_OPEN_WEATHER_API_KEY
+
+5. Find the open weather api key [here](https://openweathermap.org/)
+
+
+6. Run `npm run dev` in the root directory to start.
+
+
+### Issues
+Create any issues [here](https://github.com/sumanth-08/ReactJs-WeatherApp/issues)
+
+Speacial Thanks to [RoadsideCoder](https://www.youtube.com/@RoadsideCoder)
