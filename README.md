@@ -1,6 +1,6 @@
 # ReactJs - Tanstack - Weather app
 
-A Weather App in ReactJS with Tailwind CSS, Tanstack Query, Typescript, Shadcn UI, Recharts and Openweather API and.
+A Weather App in ReactJS with Tailwind CSS, Tanstack Query, Typescript, Shadcn UI, Recharts and Openweather API.
 
 ## Local Development
 
